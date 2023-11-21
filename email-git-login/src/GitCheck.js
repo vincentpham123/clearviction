@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { faGithub} from '@fortawesome/free-brands-svg-icons'
-
+import './gitcheck.css'
 const GitCheck =  ({repoValue, setRepoValue}) => {
     const [validRepo, setValidRepo] = useState(false);
 
