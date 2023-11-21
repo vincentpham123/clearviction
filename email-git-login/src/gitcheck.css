@@ -1,0 +1,11 @@
+
+.git-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    margin: 50px;
+    align-items: center
+    
+}
+

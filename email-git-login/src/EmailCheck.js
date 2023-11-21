@@ -1,6 +1,6 @@
 
 import {useState, useEffect} from "react"
-import './emailgitcheck.css'
+import './emailcheck.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faX, faCheck } from '@fortawesome/free-solid-svg-icons'
 const EmailGitCheck = ({setEmailValue, emailValue}) => {
@@ -27,7 +27,7 @@ const EmailGitCheck = ({setEmailValue, emailValue}) => {
         <>
         <div className='email-container'>
             <input 
-                className = 'email-text' 
+                className = 'email-git-text' 
                 type='text' 
                 placeholder = 'Email'
                 value = {emailValue}
@@ -40,7 +40,7 @@ const EmailGitCheck = ({setEmailValue, emailValue}) => {
                     <span className= 'email-check-text'>
                         <FontAwesomeIcon className='email-icon'icon={faEnvelope} />
                         <span className='valid-email-text'>
-                            . Valid Email (ex. example@email.com)
+                            Valid Email (ex. example@email.com)
                         </span>
 
                         {!validEmail && <FontAwesomeIcon className='x-icon' icon={faX}  /> }

@@ -4,13 +4,25 @@
     flex-direction: column;
     justify-content: space-between;
     width: 400px;
-    /* height: 500px; */
-    margin: auto;
+    
+    /* padding-top: 30%; */
     align-items: center;
 }
 
-.email-text{
-    width: 50%;
+.email-git-text{
+    background-color: rgba(255,255,255,.5);
+    
+    width: 330px;
+    border-radius: 3px;
+    border: 2px solid grey;
+    font-size: 1.125rem;
+    padding: 15px;
+    
+
+}
+
+.email-git-text:focus{
+    outline: none;
 }
 .email-check-container{
     display: flex;
@@ -24,10 +36,13 @@
 .email-check-text{
     display: flex;
     justify-content: space-around;
-    width: 100%
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    font-weight: bold;
 }
 .valid-email-text{
-    width: 65%;
+    /* width: 70%; */
 }
 .email-icon{
     /* margin-right: 10px; */

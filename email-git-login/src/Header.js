@@ -16,16 +16,16 @@ const Header = () => {
             <div className = 'header-nav'>
                 <div className='nav-contents'> 
                     <a href='#' className='nav-links'>
-                        Attemped
+                        ATTEMPTED
                     </a>
                     <a href='#' className='nav-links'>
-                        by 
+                        BY
                     </a>
                     <a href='https://vincentpham123.github.io/' target='_blank' className='nav-links'>
-                        Vincent 
+                        VINCENT
                     </a>
                     <a href='https://vincentpham123.github.io/' target='_blank' className='nav-links'>
-                        Pham
+                        PHAM
                     </a>
                 </div>
 

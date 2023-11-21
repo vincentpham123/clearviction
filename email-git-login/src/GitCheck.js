@@ -22,7 +22,7 @@ const GitCheck =  ({repoValue, setRepoValue}) => {
         <>
         <div className='git-container'>
             <input
-                className='git-text'
+                className='email-git-text'
                 type='text'
                 placeholder = 'Git Repo URL'
                 value = {repoValue}
