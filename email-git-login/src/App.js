@@ -1,8 +1,14 @@
 
-
+import EmailGitForm from "./EmailGitForm";
+import './app.css' 
 function App() {
   return (
-    <h1> getting everything ready </h1>
+    // this will contain everything that will make my temp website look like clear victions
+    // for now I will work on the logic of the email and github check
+    <div className='body'>
+      <EmailGitForm />
+
+    </div>
   );
 }
 
