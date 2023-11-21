@@ -15,24 +15,27 @@ const EmailGitForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const formData = new FormData();
-        formData.append('email',emailValue);
-        formData.append('githubRepoUrl', repoValue);
-
+    
         try{
             let response =  await fetch('https://cv-devs-temp-challenge.vercel.app/api/challenge',
                 {
                     method: 'POST',
-                    body: formData
+                    body: JSON.stringify({
+                        email:emailValue,
+                        githubRepoUrl: repoValue
+                    }),
+                    headers: {'Content-Type': 'application/json'}
                 }
             )
 
             if (response.ok){
                 const data = await response.json()
+                console.log(data);
                 setSuccess(data)
             } else{
                 const errorResponse = await response.json()
-                setErrors(error.error)
+                console.log(errorResponse)
+                setErrors(errorResponse.error)
             }
         } catch (error){
             setErrors('An error occured with the requeset')
@@ -43,7 +46,7 @@ const EmailGitForm = () => {
     }
     return (
         <>
-            <form className='form-container' onSub>
+            <form className='form-container' onSubmit={event=>handleSubmit(event)}>
                 <EmailGitCheck setEmailValue={setEmailValue} emailValue={emailValue} />
                 <GitCheck repoValue={repoValue} setRepoValue = {setRepoValue} />
                 <button>
