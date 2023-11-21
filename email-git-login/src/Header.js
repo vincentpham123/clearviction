@@ -9,9 +9,9 @@ const Header = () => {
           <div className='header-container'>
             <div className='header-contents'>
                 <span className='header-title'>
-                    ClearViction 
+                    CLEARVICTION asynchronous techincal challenge
                     <span className='header-footnote'>
-                        asynchronous techincal challenge
+                        - attempted by Vincent Pham
                     </span>
                 </span>
                 
