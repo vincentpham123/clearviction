@@ -1,0 +1,30 @@
+
+.header-container{
+    height: 10%;
+    width: 100%;
+    background-color: #2F3554;
+    position: sticky;
+}
+
+.header-contents{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    /* justify-content: space-around; */
+}
+
+.header-title{
+   
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter', sans-seriff;
+    padding-left: 2.5%;
+}
+
+.header-footnote{
+    color: white;
+    font-family: 'Inter', sans-seriff;
+    font-style: italic;
+}

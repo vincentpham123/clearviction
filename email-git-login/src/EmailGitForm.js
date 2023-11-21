@@ -2,6 +2,7 @@
 import EmailGitCheck from "./EmailCheck";
 import GitCheck from "./GitCheck";
 import {useState, useEffect} from "react"
+import './emailgitform.css'
 const EmailGitForm = () => {
     const [emailValue, setEmailValue] = useState('');
     const [repoValue, setRepoValue] = useState('');
