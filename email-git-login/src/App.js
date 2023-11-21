@@ -1,7 +1,7 @@
 
 import EmailGitForm from "./EmailGitForm";
 import Header from "./Header";
-import './app.css' 
+import './app.css';
 function App() {
   return (
     // this will contain everything that will make my temp website look like clear victions

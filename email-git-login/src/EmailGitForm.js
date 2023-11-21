@@ -2,7 +2,8 @@
 import EmailGitCheck from "./EmailCheck";
 import GitCheck from "./GitCheck";
 import {useState, useEffect} from "react"
-import './emailgitform.css'
+import './emailgitform.css';
+import { Modal } from "./context/Modal";
 const EmailGitForm = () => {
     const [emailValue, setEmailValue] = useState('');
     const [repoValue, setRepoValue] = useState('');
@@ -10,9 +11,16 @@ const EmailGitForm = () => {
     const [validEmail, setValidEmail] = useState(false);
     const [success,setSuccess] = useState('')
     const [error, setErrors] = useState('')
+    // modal useState
+    const [showModal, setShowModal] = useState(false);
+
     //handle submit 
     // create formData and submit to fetch as a post 
-
+    const handleModalClose = () => {
+        setEmailValue('')
+        setRepoValue('')
+        setShowModal(false);
+    }
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -27,19 +35,24 @@ const EmailGitForm = () => {
                     }),
                     headers: {'Content-Type': 'application/json'}
                 }
-            )
+            );
 
             if (response.ok){
-                const data = await response.json()
-                console.log(data);
-                setSuccess(data)
+                const data = await response.json();
+           
+                setSuccess(data.message);
+                setShowModal(true);
             } else{
                 const errorResponse = await response.json()
                 console.log(errorResponse)
-                setErrors(errorResponse.error)
+                setErrors(errorResponse.error);
+                setShowModal(true);
+
             }
         } catch (error){
             setErrors('An error occured with the requeset')
+            setShowModal(true);
+
         }
         
         // set emailValue and repoValue 
@@ -54,6 +67,30 @@ const EmailGitForm = () => {
                     Submit
                 </button>
             </form> 
+
+            {showModal && (
+                <Modal onClose={()=>handleModalClose()}>
+                    {/* this will display the message and have a button asking if they would like to submit another */}
+                    <div className='message-modal'>
+                        <div className='message'>
+                            {success.length >0 && (<strong className='success-message'>
+                                {success}
+                            </strong>)
+                            }
+                            {error.length >0 && (<strong className='error-message'>
+                                {error}
+                            </strong>)
+                            }
+                        </div>
+                        <button 
+                            className="modal-button" 
+                            onClick={()=> handleModalClose()}
+                        >
+                            Submit Another??
+                        </button>
+                    </div>
+                </Modal>
+            )}
         </>
         
     )
