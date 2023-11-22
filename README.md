@@ -26,7 +26,7 @@ This is a simple form that takes in an email address and github repository URL. 
 
 ![Screenshot 2023-11-21 at 6 45 24 PM](https://github.com/vincentpham123/clearviction/assets/127375334/2d907b2f-449b-485d-a07f-00302076d741)
 
-* Github REPO URL verification: Github repo url's are verfied using simple GET request on Github's API to check for the existence of the repo.
+* Github REPO URL verification: Github repo url's are verified using a GET request with Github's API in order to check for the existence of the submitted repo.
 
   
 ![Screenshot 2023-11-21 at 6 48 26 PM](https://github.com/vincentpham123/clearviction/assets/127375334/160cc7de-9b8a-475d-a339-98cdd6406f3a)
