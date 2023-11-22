@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { faGithub} from '@fortawesome/free-brands-svg-icons'
 import './gitcheck.css'
-const GitCheck =  ({repoValue, setRepoValue}) => {
-    const [validRepo, setValidRepo] = useState(false);
+const GitCheck =  ({repoValue, setRepoValue, validRepo, setValidRepo}) => {
+    // const [validRepo, setValidRepo] = useState(false);
 
     useEffect (()=>{
         if (validateGitRepo(repoValue)){
@@ -34,14 +34,18 @@ const GitCheck =  ({repoValue, setRepoValue}) => {
                 <div className='git-check-frame'>
                     <span className='git-check-text'>
                         {/* <FontAwesomeIcon className='git-icon' icon={faGithub} /> */}
-                        <FontAwesomeIcon icon={faGithub} />
+                        <FontAwesomeIcon className='git-icon' icon={faGithub} />
                         <span className='valid-git-text'>
-                            Valid Git Url (ex. https://github.com/username/repo-name)
+                            Valid Git Url 
+                            <span>
+                                (ex. https://github.com/user/repo)
+
+                            </span>
                         </span>
 
-                    </span>
                     {!validRepo && <FontAwesomeIcon className='x-icon' icon={faX}  /> }
                     {validRepo && <FontAwesomeIcon className='check-icon' icon={faCheck} />}
+                    </span>
 
                 </div>
 

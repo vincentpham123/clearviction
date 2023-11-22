@@ -3,9 +3,45 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 400px;
-    margin: 50px;
-    align-items: center
+    width: 50%;
+    margin-top: 10px;
+    align-items: center;
     
 }
+
+.git-check-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.git-icon{
+    margin-right: 20px;
+    width: 16px;
+}
+
+
+.git-check-frame{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.git-check-text{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.valid-git-text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 

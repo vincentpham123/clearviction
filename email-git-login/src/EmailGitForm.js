@@ -9,6 +9,7 @@ const EmailGitForm = () => {
     const [repoValue, setRepoValue] = useState('');
 
     const [validEmail, setValidEmail] = useState(false);
+    const [validRepo, setValidRepo] = useState(false);
     const [success,setSuccess] = useState('')
     const [error, setErrors] = useState('')
     // modal useState
@@ -21,9 +22,12 @@ const EmailGitForm = () => {
         setRepoValue('')
         setShowModal(false);
     }
+
+    // function to disable or enable submit button 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+    
     
         try{
             let response =  await fetch('https://cv-devs-temp-challenge.vercel.app/api/challenge',
@@ -56,14 +60,30 @@ const EmailGitForm = () => {
         }
         
         // set emailValue and repoValue 
-        // only allow submission 
+        // only allow submission once those are both true??
+        
     }
     return (
         <>
             <form className='form-container' onSubmit={event=>handleSubmit(event)}>
-                <EmailGitCheck setEmailValue={setEmailValue} emailValue={emailValue} />
-                <GitCheck repoValue={repoValue} setRepoValue = {setRepoValue} />
-                <button>
+                <h1 className='instructions'> Enter Email and Git Repo URL </h1>
+                <EmailGitCheck 
+                    setEmailValue={setEmailValue} 
+                    emailValue={emailValue} 
+                    validEmail = {validEmail}
+                    setValidEmail= {setValidEmail}
+                    />
+                <GitCheck 
+                    repoValue={repoValue} 
+                    setRepoValue = {setRepoValue} 
+                    validRepo={validRepo}
+                    setValidRepo={setValidRepo}
+                    />
+                <button 
+                    className='form-button'
+                    disabled = {!validEmail || !validRepo}
+                    // if either are false then button will be disabled
+                    >
                     Submit
                 </button>
             </form> 

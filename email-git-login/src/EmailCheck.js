@@ -3,13 +3,13 @@ import {useState, useEffect} from "react"
 import './emailcheck.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faX, faCheck } from '@fortawesome/free-solid-svg-icons'
-const EmailGitCheck = ({setEmailValue, emailValue}) => {
+const EmailGitCheck = ({setEmailValue, emailValue, validEmail, setValidEmail}) => {
 
     // TO DO:
     // fix spacing in the email text 
     // style the email text box 
     
-    const [validEmail, setValidEmail] = useState(false);
+    // const [validEmail, setValidEmail] = useState(false);
 
     useEffect (()=>{
         if (validateEmail(emailValue)){
