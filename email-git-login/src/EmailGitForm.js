@@ -17,8 +17,9 @@ const EmailGitForm = () => {
     //handle submit 
     // create formData and submit to fetch as a post 
     const handleModalClose = () => {
-        setEmailValue('')
-        setRepoValue('')
+        setMessage('')
+        setEmailValue('');
+        setRepoValue('');
         setShowModal(false);
     }
 
@@ -26,8 +27,24 @@ const EmailGitForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
-    
+        
+        const [username, repoName] = repoValue.split('/').slice(-2);
+        
+        //https://api.github.com/repos/<user>/<repo>
+        try{
+            let gitCheck = await fetch(`https://api.github.com/repos/${username}/${repoName}`)
+            if (!gitCheck.ok){
+                setMessage('Git Repo does not exist')
+                setShowModal(true);
+                return
+            }
+        // if repo does not exist, modal will pop up with message
+        } catch{
+            setMessage('An error occured with the request')
+            setShowModal(true);
+            return
+        }
+        
         try{
             let response =  await fetch('https://cv-devs-temp-challenge.vercel.app/api/challenge',
                 {
