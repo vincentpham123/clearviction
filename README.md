@@ -3,7 +3,7 @@
 To take a look:
 
 1. Download and cd into email-git-login
-2. Npm Intall
+2. Npm Install
 3. Npm start
 
 
