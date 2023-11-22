@@ -10,8 +10,7 @@ const EmailGitForm = () => {
 
     const [validEmail, setValidEmail] = useState(false);
     const [validRepo, setValidRepo] = useState(false);
-    const [success,setSuccess] = useState('')
-    const [error, setErrors] = useState('')
+    const [message,setMessage] = useState('')
     // modal useState
     const [showModal, setShowModal] = useState(false);
 
@@ -44,17 +43,17 @@ const EmailGitForm = () => {
             if (response.ok){
                 const data = await response.json();
            
-                setSuccess(data.message);
+                setMessage(data.message);
                 setShowModal(true);
             } else{
                 const errorResponse = await response.json()
-                console.log(errorResponse)
-                setErrors(errorResponse.error);
+
+                setMessage(errorResponse.error);
                 setShowModal(true);
 
             }
         } catch (error){
-            setErrors('An error occured with the requeset')
+            setMessage('An error occured with the request')
             setShowModal(true);
 
         }
@@ -92,13 +91,21 @@ const EmailGitForm = () => {
                 <Modal onClose={()=>handleModalClose()}>
                     {/* this will display the message and have a button asking if they would like to submit another */}
                     <div className='message-modal'>
+                        <h2 className='modal-title'>Submissions</h2>
+                        <div className="submissions">
+                            <span className="submission">
+                                Email: 
+                                <strong className='submitted-value'>{emailValue}</strong>
+                            </span>
+                            <span className="submission">
+                                Git Url: 
+                                <strong className='submitted-value' >{repoValue}</strong>
+                            </span>
+
+                        </div>
                         <div className='message'>
-                            {success.length >0 && (<strong className='success-message'>
-                                {success}
-                            </strong>)
-                            }
-                            {error.length >0 && (<strong className='error-message'>
-                                {error}
+                            {message.length >0 && (<strong className='Modal-message'>
+                                {message}
                             </strong>)
                             }
                         </div>
@@ -106,7 +113,7 @@ const EmailGitForm = () => {
                             className="modal-button" 
                             onClick={()=> handleModalClose()}
                         >
-                            Submit Another??
+                            Submit Another?
                         </button>
                     </div>
                 </Modal>

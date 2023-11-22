@@ -40,7 +40,10 @@ const EmailGitCheck = ({setEmailValue, emailValue, validEmail, setValidEmail}) =
                     <span className= 'email-check-text'>
                         <FontAwesomeIcon className='email-icon'icon={faEnvelope} />
                         <span className='valid-email-text'>
-                            Valid Email (ex. example@email.com)
+                            Valid Email 
+                            <span>
+                                (ex. example@email.com)
+                            </span>
                         </span>
 
                         {!validEmail && <FontAwesomeIcon className='x-icon' icon={faX}  /> }

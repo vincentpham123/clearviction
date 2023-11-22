@@ -25,8 +25,72 @@
     font-weight: 600;
     border-radius: 3px;
 }
-
+.form-button:hover{
+    cursor: pointer;
+}
 .form-button:disabled{
     background-color: #2F3554;
     opacity: .5;
+    cursor: not-allowed ;
 }
+
+
+/* Modal styling */
+
+.message-modal{
+    width: 500px;
+    height: 400px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.1);
+    max-height: 500px;
+}
+
+.submissions{
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.submission{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    width: 400px;
+    
+}
+.submitted-value {
+    
+}
+strong{
+    font-weight: 600;
+    word-wrap:break-word;
+   
+    height: 100%;
+}
+.modal-title{
+    font-size: 1.15rem;
+    padding: 5px;
+}
+.modal-button{
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.25rem;
+    color: white;
+    background-color: #2F3554;
+    border-style: none;
+    cursor: pointer;
+    opacity: .6;
+    border-radius: 3px;
+}
+.modal-button:hover{
+    background-color: #2F3554;
+    opacity: 1;
+}
+
